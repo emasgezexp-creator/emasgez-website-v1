@@ -359,19 +359,26 @@
   .cat-intro { color: var(--muted); font-size: 14px; margin-bottom: 28px; line-height: 1.8; max-width: 700px; }
   .cat-intro strong { color: var(--white); }
 
-  /* MARKETS */
-  .markets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .market-card { background: var(--panel); border: 1px solid var(--border); padding: 52px 44px; display: flex; gap: 36px; align-items: flex-start; transition: border-color 0.3s; position: relative; overflow: hidden; }
-  .market-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold); transform: scaleY(0); transform-origin: top; transition: transform 0.5s; }
-  .market-card:hover { border-color: var(--gold-dim); }
-  .market-card:hover::before { transform: scaleY(1); }
-  .market-flag { font-size: 48px; flex-shrink: 0; }
-  .market-country { font-family: 'Bebas Neue', sans-serif; font-size: 30px; letter-spacing: 3px; margin-bottom: 8px; }
-  .market-status { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-  .market-status-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
-  .market-desc { font-size: 14px; line-height: 1.8; color: var(--muted); }
-  .market-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-  .market-tag-item { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); padding: 4px 12px; background: var(--steel); }
+  /* MARKETS — WORLD */
+  .section-subtitle { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 620px; margin-bottom: 52px; }
+  .world-map-container { border: 1px solid var(--border); background: var(--panel); padding: 8px; margin-bottom: 2px; overflow: hidden; }
+  .world-map-svg { width: 100%; display: block; }
+  .pulse-ring { animation: mapPulse 2.4s ease-out infinite; transform-origin: 548px 138px; }
+  .pulse1 { animation-delay: 0s; }
+  .pulse2 { animation-delay: 0.8s; }
+  @keyframes mapPulse { 0% { transform: scale(1); opacity: 0.2; } 100% { transform: scale(2.5); opacity: 0; } }
+  .shipping-lines path { stroke-dasharray: 4 3; animation: dash 8s linear infinite; }
+  @keyframes dash { to { stroke-dashoffset: -100; } }
+  .region-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; }
+  .region-card { background: var(--panel); border: 1px solid var(--border); padding: 28px 20px; text-align: center; transition: border-color 0.3s, background 0.3s; position: relative; overflow: hidden; }
+  .region-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+  .region-card:hover { border-color: var(--gold-dim); background: #15151f; }
+  .region-card:hover::before { transform: scaleX(1); }
+  .region-card--highlight { border-color: var(--gold-dim); }
+  .region-card--highlight::before { transform: scaleX(1); }
+  .region-icon { font-size: 26px; margin-bottom: 10px; }
+  .region-name { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+  .region-desc { font-size: 11px; line-height: 1.6; color: var(--muted); }
 
   /* WHY */
   .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
@@ -412,7 +419,8 @@
 
   @media (max-width: 1100px) { .g4, .g6 { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 900px) {
-    .g3, .g2, .markets-grid, .about-grid, .why-grid { grid-template-columns: 1fr; }
+    .g3, .g2, .about-grid, .why-grid { grid-template-columns: 1fr; }
+    .region-grid { grid-template-columns: repeat(2, 1fr); }
     .g4 { grid-template-columns: repeat(2,1fr); }
     .g6 { grid-template-columns: repeat(3,1fr); }
     .contact-grid { grid-template-columns: repeat(2,1fr); }
