@@ -150,6 +150,7 @@ const obs = new IntersectionObserver(entries => {
     });
   });
 }, { threshold: 0.06 });
+reveals.forEach(r => obs.observe(r));
 
 /* ═══════════════════════════════════
    WORLD MAP — Animation Canvas
