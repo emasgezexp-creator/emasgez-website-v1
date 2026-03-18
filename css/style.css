@@ -361,14 +361,8 @@
 
   /* MARKETS — WORLD */
   .section-subtitle { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 620px; margin-bottom: 52px; }
-  .world-map-container { border: 1px solid var(--border); background: var(--panel); padding: 8px; margin-bottom: 2px; overflow: hidden; }
-  .world-map-svg { width: 100%; display: block; }
-  .pulse-ring { animation: mapPulse 2.4s ease-out infinite; transform-origin: 548px 138px; }
-  .pulse1 { animation-delay: 0s; }
-  .pulse2 { animation-delay: 0.8s; }
-  @keyframes mapPulse { 0% { transform: scale(1); opacity: 0.2; } 100% { transform: scale(2.5); opacity: 0; } }
-  .shipping-lines path { stroke-dasharray: 4 3; animation: dash 8s linear infinite; }
-  @keyframes dash { to { stroke-dashoffset: -100; } }
+  .world-map-container { border: 1px solid var(--border); background: #0a0a14; margin-bottom: 2px; overflow: hidden; position: relative; }
+  .world-map-canvas { width: 100%; display: block; height: auto; }
   .region-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; }
   .region-card { background: var(--panel); border: 1px solid var(--border); padding: 28px 20px; text-align: center; transition: border-color 0.3s, background 0.3s; position: relative; overflow: hidden; }
   .region-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
